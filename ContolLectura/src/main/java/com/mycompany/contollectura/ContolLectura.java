@@ -6,15 +6,18 @@ package com.mycompany.contollectura;
 public class ContolLectura {
 
     public static void main(String[] args) {
-        Figura[] figuras = new Figura[2];
-        figuras[0] = new Circulo("rojo", 5); 
-        figuras[1] = new Rectangulo("azul", 4, 6); 
+          // Lista de profesores
+        Profesor[] profesores = new Profesor[3];
+        profesores[0] = new ProfesorTiempoCompleto("Juan", 40);
+        profesores[1] = new ProfesorMedioTiempo("María", 20);
+        profesores[2] = new ProfesorInvitado("Carlos", 20);
 
-        for (Figura figura : figuras) {
-            figura.mostrarColor();
-            System.out.println("Área: " + figura.calcularArea());
-            System.out.println("Perímetro: " + figura.calcularPerimetro());
-           
-    }
+        // Calcular y mostrar el salario de cada profesor
+        for (Profesor profesor : profesores) {
+            double salario = profesor.calcularSalario();
+            System.out.println("El salario de " + profesor.nombre + " es de " + salario + "$");
+        }
+    }
 }
-}
+    
+       
